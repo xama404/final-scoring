@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="/add-data">Add Data</a>
+        <a href="/collections">View Collections</a>
+        <a href="/logout">Logout</a>
+    </div>
+    <div class="main-content">
+        <h1>Collections</h1>
+        <ul>
+            {{#each collections}}
+                <li>
+                    {{this.name}} 
+                    <a href="/collections/{{this.id}}/tasks">View Tasks</a>
+                    <a href="/collections/{{this.id}}/edit">Edit</a>
+                    <form action="/collections/{{this.id}}/delete" method="POST" style="display:inline;">
+                        <button type="submit">Delete</button>
+                    </form>
+                </li>
+            {{else}}
+                <li>No collections found.</li>
+            {{/each}}
+        </ul>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="/add-data">Add Data</a>
+        <a href="/collections">View Collections</a>
+        <a href="/logout">Logout</a>
+    </div>
+    <div class="main-content">
+        <h1>Tasks for Collection</h1>
+        <ul>
+            {{#each tasks}}
+                <li>
+                    {{this.name}} - {{#if this.is_done}}Completed{{else}}Not Completed{{/if}}
+                    <form action="/tasks/{{this.id}}/toggle" method="POST" style="display:inline;">
+                        <button type="submit">{{#if this.is_done}}Mark as Not Completed{{else}}Mark as Completed{{/if}}</button>
+                    </form>
+                    <form action="/tasks/{{this.id}}/delete" method="POST" style="display:inline;">
+                        <button type="submit">Delete</button>
+                    </form>
+                </li>
+            {{else}}
+                <li>No tasks found for this collection.</li>
+            {{/each}}
+        </ul>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="/add-data">Add Data</a>
+        <a href="/collections">View Collections</a>
+        <a href="/logout">Logout</a>
+    </div>
+    <div class="main-content">
+        <h1>Add Data</h1>
+
+        <h2>Add Collection</h2>
+        <form id="addCollectionForm">
+            <div class="form-group">
+                <label for="collectionName">Collection Name:</label>
+                <input type="text" id="collectionName" name="name" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Add Collection</button>
+            </div>
+        </form>
+
+        <h2>Add Task</h2>
+        <form id="addTaskForm">
+            <div class="form-group">
+                <label for="taskTitle">Task Title:</label>
+                <input type="text" id="taskTitle" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="collectionId">Collection ID:</label>
+                <input type="number" id="collectionId" name="collections_id" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Add Task</button>
+            </div>
+        </form>
+    </div>
+    <script src="/js/addData.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="navbar">
+        <a href="/add-data">Add Data</a>
+        <a href="/collections">View Collections</a>
+        <a href="/logout">Logout</a>
+    </div>
+    <div class="main-content">
+        <h1>Edit Collection</h1>
+        <form action="/collections/{{collection.id}}/edit" method="POST">
+            <div class="form-group">
+                <label for="name">Collection Name:</label>
+                <input type="text" id="name" name="name" value="{{collection.name}}" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Save Changes</button>
+            </div>
+        </form>
+    </div>
+    <script src="/js/script.js"></script>
+</body>
+</html>
